@@ -63,3 +63,12 @@ function createFrequencyCounter(arr) {
     return median
   }
   
+
+  module.exports = {
+    createFrequencyCounter,
+    findMean,
+    findMedian,
+    findMode,
+    convertAndValidateNumsArray
+  };
+  

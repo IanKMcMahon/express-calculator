@@ -1,10 +1,6 @@
 
 const express = require('express');
 const app = express();
-
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-
 const ExpressError = require('./expressError');
 
 const { convertAndValidateNumsArray, findMode, findMean, findMedian } = require('./helpers');
@@ -50,7 +46,7 @@ app.get('/median', function(req, res,next) {
   return res.send(result);
 });
 
-app.get('/mode?;nums', function(req, res, next) {
+app.get('/mode', function(req, res, next) {
   if (!req.query.nums) {
     throw new ExpressError('You must pass a query key of nums with a comma-separated list of numbers.', 400)
   }
@@ -89,5 +85,5 @@ app.use(function (err, req, res, next) {
 });
 
 app.listen(3000, function() {
-  console.log('Server started on port 3000.');
+  console.log(`Server starting on port 3000`);
 });
