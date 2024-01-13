@@ -9,17 +9,18 @@ app.use(express.urlencoded({ extended: true }));
 
 app.get('/mean?:nums', function(req, res) {
 let mean = Math().mean([nums])
+console.log(mean)
 return mean
      });
 
 
 
-app.get('/median?:nums', function(re, res) {
+app.get('/median?:nums', function(req, res) {
   let median = Math().median([nums])
   return mean
 });
 
-app.get('/mode?;nums', function(re, res) {
+app.get('/mode?;nums', function(req, res) {
   let mode = Math().mode([nums])
   return mean
 });
