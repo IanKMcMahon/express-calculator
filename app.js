@@ -8,19 +8,20 @@ app.use(express.urlencoded({ extended: true }));
 
 
 app.get('/mean?:nums', function(req, res) {
-    return res.json(
-        { nums: req.params.nums,
-          mean:  
+let mean = Math().mean([nums])
+return mean
      });
 
-});
+
 
 app.get('/median?:nums', function(re, res) {
-
+  let median = Math().median([nums])
+  return mean
 });
 
 app.get('/mode?;nums', function(re, res) {
-
+  let mode = Math().mode([nums])
+  return mean
 });
 
 app.listen(3000, function() {
