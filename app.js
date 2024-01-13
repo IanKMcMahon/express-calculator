@@ -1,11 +1,13 @@
 
 const express = require('express');
-
 const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+const ExpressError = require('./expressError');
+
+const { convertAndValidateNumsArray, findMode, findMean, findMedian } = require('./helpers');
 
 app.get('/mean', function(req, res, next) {
   if (!req.query.nums) {
